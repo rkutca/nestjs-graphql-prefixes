@@ -17,5 +17,5 @@ curl 'http://localhost:8080/v1/api/company/v1/search' -H 'Accept-Encoding: gzip,
 ```
 
 ### Opening the playground
-Open http://localhost:8080/api/company/v1/search in the browser to access the playground throws a bunch of errors. The main, error: server cannot be reached. The playground tries to connect with the global prefix of nestjs only, and not take the prefix of the reverse proxy into consideration. See network tab.
+Open http://localhost:8080/v1/api/company/v1/search in the browser to access the playground throws a bunch of errors. The main, error: server cannot be reached. The playground tries to connect with the global prefix of nestjs only, and not take the prefix of the reverse proxy into consideration. See network tab.
 
