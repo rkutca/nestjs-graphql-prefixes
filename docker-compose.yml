@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  nodejs:
+    ports:
+      - '3000:3000'
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: sh -c "npx pm2-runtime npm -- run start:debug"
+    volumes:
+      - ./src:/home/usr/app/src
+    environment:
+      - NODE_ENV=development
+  
+  nginx:
+    image: nginx:1.19.4
+    command: >
+      bash -c "
+        sleep 5
+        nginx-debug -g 'daemon off;'
+      "
+    depends_on: 
+      - nodejs
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx_include.conf:/etc/nginx/nginx_include.conf
+    ports:
+      - "8080:80"
+  
