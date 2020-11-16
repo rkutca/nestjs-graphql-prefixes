@@ -13,7 +13,7 @@ So the endpoint is `v1/api/company/v1/search`.
 docker-compose up
 
 # this works fine
-curl 'http://localhost:8080/api/company/v1/search' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:8080' --data-binary '{"query":"# Write your query or mutation here\nquery recipe($id: String!) {\n  recipe(id: $id){\n    id,\n  }\n}","variables":{"id":"1"}}' --compressed
+curl 'http://localhost:8080/v1/api/company/v1/search' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:8080' --data-binary '{"query":"# Write your query or mutation here\nquery recipe($id: String!) {\n  recipe(id: $id){\n    id,\n  }\n}","variables":{"id":"1"}}' --compressed
 ```
 
 ### Opening the playground
