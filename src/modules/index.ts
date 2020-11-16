@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { SearchDutchBusinessModule } from './graphql-module';
+import { GraphQLReverseProxy } from './graphql-module';
 import { RecipesModule } from '../recipes/recipe.module'
 
 @Module({
   imports: [
-    SearchDutchBusinessModule,
+    GraphQLReverseProxy,
     RecipesModule
   ],
 })

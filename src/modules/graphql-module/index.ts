@@ -9,11 +9,11 @@ const isProduction = process.env.NODE_ENV === 'prod';
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src', 'schemas', 'schema.gql'),
       debug: !isProduction,
-      path: '/search',
+      path: '/graphql-prefix',
       playground: !isProduction,
       sortSchema: true,
       useGlobalPrefix: true,
     }),
   ],
 })
-export class SearchDutchBusinessModule {}
+export class GraphQLReverseProxy {}

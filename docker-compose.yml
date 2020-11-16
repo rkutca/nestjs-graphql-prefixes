@@ -23,7 +23,6 @@ services:
       - nodejs
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx_include.conf:/etc/nginx/nginx_include.conf
     ports:
       - "8080:80"
   

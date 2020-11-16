@@ -20,7 +20,7 @@ async function bootstrapApp(): Promise<void> {
   // set global prefix
   // note this prefix is dependend on
   // the API gateway prefix
-  app.setGlobalPrefix('api/company/v1');
+  app.setGlobalPrefix('nest/global/prefix');
 
   // validate incoming requests
   app.useGlobalPipes(
